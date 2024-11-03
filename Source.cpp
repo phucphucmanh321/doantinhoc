@@ -54,9 +54,9 @@ void Dangki(HashTable &ds) {
 	}*/
 	cout << "Nhap ho ten: ";
 	cin >> kh->KH.tenkh;
-	cout << "Nhap ten tai khoan: ";
+	cout << "Tai khoan: ";
 	cin >> kh->KH.taikhoan;
-	cout << "Nhap mat khau: ";
+	cout << "Mat khau: ";
 	cin >> kh->KH.matkhau;
 	insert(ds, kh);
 	cout << "\nThem thanh cong !!!";
