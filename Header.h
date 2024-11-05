@@ -1,15 +1,13 @@
 #pragma once
 #include <iostream>
-#include <fstream>
 #include <string>
-#include <ctype.h>
+#include <fstream>
 using namespace std;
 const int MAX = 10;
 struct Khachhang {
-	int maKH;
-	string tenkh;
-	string taikhoan;
-	string matkhau;
+	char maKH[11];
+	char tenkh[50];
+	char matkhau[50];
 };
 struct NODE {
 	Khachhang KH;
@@ -19,12 +17,17 @@ typedef NODE* Nodeptr;
 struct HashTable {
 	Nodeptr HashTable[MAX];
 };
-int hash_funct(int data);
-void insert(HashTable& table, int data);
-Nodeptr find(HashTable table, int data);
-bool CheckPhoneNum(int a);
+void GiaoDien();
+void login(HashTable ds);
+void Xuat(HashTable ds);
+int hash_funct(char data);
+void insert(HashTable& table, Nodeptr kh);
+bool find(HashTable table, Nodeptr p);
+bool CheckPhoneNum(const char a[]);
 void Dangki(HashTable& ds);
-
+void ghiStructVaoFile(const char* filename, HashTable ds);
+void docStructTuFile(const char* filename, HashTable& ds);
+void initializeHashTable(HashTable& ds);
 //View
 void ViewInfo(Nodeptr p);
 void StartView(HashTable &ds);
